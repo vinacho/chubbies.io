@@ -2,11 +2,10 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogPostTemplate = ({ data, location }) => {
+const PageTemplate = ({ data, location }) => {
   const post = data.post
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
@@ -24,55 +23,22 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
         </header>
         <section
           itemProp="articleBody"
         >
           <MDXRenderer>{post.body}</MDXRenderer>
         </section>
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
       </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
 
-export default BlogPostTemplate
+export default PageTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug(
+  query PageBySlug(
     $id: String!
-    $previousPostId: String
-    $nextPostId: String
   ) {
     site {
       siteMetadata {
@@ -87,18 +53,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-      }
-    }
-    previous: mdx(id: { eq: $previousPostId }) {
-      slug
-      frontmatter {
-        title
-      }
-    }
-    next: mdx(id: { eq: $nextPostId }) {
-      slug
-      frontmatter {
-        title
       }
     }
   }

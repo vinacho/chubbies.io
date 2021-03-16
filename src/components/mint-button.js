@@ -1,5 +1,5 @@
 import React from "react"
-import adoptChubby from "../scripts/mint.js"
+import {adoptChubby} from "../scripts/dapp-utils.js"
 const NFT_CONTRACT_ADDRESS = "0x72138Afd66d83AD098fA2dA0A0333847d15caA74";
 const NFT_ABI = [
   {
@@ -32,8 +32,7 @@ const NFT_ABI = [
 
 class MintButton extends React.Component {
   async handleClick() {
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    await adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, accounts[0])
+    await adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI)
   }
 
   render() {

@@ -12,22 +12,19 @@ const Bio = ({releasedNumber}) => {
     <div className="blog-post">
       <div>
         <p>
-          Minimalist punks with only two colors - black and white.
+          Chubbies are the cutest NFTs on the Ethereum blockchain are here! They are cute mascots trying to win the contest. 
         </p>
         <p>
-          Rumor has it that there's a certain tribe of punks who like living a simple life and watching Akira Kurosawa movies.
+          Paying respect to its predecessors, of course there will be Zombies, Apes, and Aliens, and there's more! 
         </p>
         <p>
-          This project pays homage to the OG cryptopunks project and is not affiliated with Larva Labs.
+          There are only 10000 of them and the price was set at a competitive bonding curve to allow for fun trades. 
         </p>
         <p>
-          Site under construction.
+          We can't wait to see what the community think of it and how the price. 
         </p>
-        <p>
-          Check twitter <a href="https://twitter.com/bwpunks">(@bwpunks)</a> for latest info!
-        </p>
-        <p>
-          {releasedNumber} out of 1000 NFTs have been minted and you can trade on <a href="https://opensea.io/collection/bwpunks">OpenSea</a>.
+        <p> 
+          Launch time
         </p>
       </div>
     </div>

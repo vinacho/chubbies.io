@@ -4,7 +4,9 @@ import { graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import MintButton from "../components/mint-button"
+import Dashboard from "../components/dashboard"
+import {checkNetwork, loadAccount} from "../scripts/dapp-utils"
+
 
 
 const BlogIndex = ({ data, location }) => {
@@ -14,7 +16,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Home" />
       <Bio releasedNumber={30}/>
-      <MintButton />
+      <Dashboard />
     </Layout>
   )
 }
@@ -26,18 +28,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    posts: allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-      nodes {
-        id
-        slug
-        excerpt
-        frontmatter {
-          title
-          description
-          date(formatString: "MMMM DD, YYYY")
-        }
       }
     }
   }

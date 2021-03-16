@@ -10,6 +10,11 @@ const Nav = () => {
           About
         </Link>
       </li>
+      <li>
+        <Link to="/faq">
+          FAQ
+        </Link>
+      </li>
     </ul>
   )
 }

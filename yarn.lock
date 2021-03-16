@@ -1712,6 +1712,11 @@
   "resolved" "https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz"
   "version" "1.6.22"
 
+"@metamask/detect-provider@^1.2.0":
+  "integrity" "sha512-ocA76vt+8D0thgXZ7LxFPyqw3H7988qblgzddTDA6B8a/yU0uKV42QR/DhA+Jh11rJjxW0jKvwb5htA6krNZDQ=="
+  "resolved" "https://registry.npmjs.org/@metamask/detect-provider/-/detect-provider-1.2.0.tgz"
+  "version" "1.2.0"
+
 "@mikaelkristiansson/domready@^1.0.10":
   "integrity" "sha512-nEBLOa0JgtqahmPrnJZ18epLiFBzxhdKgo4uhN3TaBFRmM30pEVrS9FAEV4tg92d8PTdU+dYQx2lnpPyFMgMcg=="
   "resolved" "https://registry.npmjs.org/@mikaelkristiansson/domready/-/domready-1.0.11.tgz"
