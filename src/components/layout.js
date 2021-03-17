@@ -9,7 +9,7 @@ const Layout = ({ location, title, children }) => {
   const header = (
     <h1 className="main-heading">
       <div className="bwpunk-art--1-large" />
-      <Link to="/">{title}</Link>
+      <Link to="/">{title.toUpperCase()}</Link>
     </h1>
   )
 

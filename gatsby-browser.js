@@ -1,5 +1,5 @@
 // custom typefaces
-import "typeface-nunito"
+import "typeface-fira-mono"
 // normalize CSS across browsers
 import "./src/normalize.css"
 // custom CSS styles

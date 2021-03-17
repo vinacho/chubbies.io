@@ -12951,6 +12951,11 @@
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
 
+"react-numeric-input@^2.2.3":
+  "integrity" "sha1-S/WRjD6v7YUagN8euZLZQQArtVI="
+  "resolved" "https://registry.npmjs.org/react-numeric-input/-/react-numeric-input-2.2.3.tgz"
+  "version" "2.2.3"
+
 "react-refresh@^0.8.3", "react-refresh@>=0.8.3 <0.10.0":
   "integrity" "sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
@@ -12963,7 +12968,7 @@
   dependencies:
     "shallowequal" "^1.0.1"
 
-"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^16.12.0", "react@^16.13.1 || ^17.0.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0-0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0", "react@^16.8.0 || ^17.0.0", "react@>=15.0.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
+"react@^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0", "react@^0.14.0 || ^15.0.0 || ^16.0.0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 ", "react@^16.12.0", "react@^16.13.1 || ^17.0.0", "react@^16.14.0", "react@^16.3.0 || ^17.0.0-0", "react@^16.4.2 || ^17.0.0", "react@^16.8.0", "react@^16.8.0 || ^17.0.0", "react@>=0.14.0 || ^15.6.1 || ^16.0.0", "react@>=15.0.0", "react@15.x || 16.x || 16.4.0-alpha.0911da3":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
@@ -15544,9 +15549,19 @@
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
 
+"typeface-fira-mono@^1.1.13":
+  "integrity" "sha512-+1T4zpyB2kYoOP7K0+k4gSaxchkwh/UeOC30h1vstAetF4+eJc6qVI3adrFVOPB7sYwHXJtLcfkKG2fAMs3TgQ=="
+  "resolved" "https://registry.npmjs.org/typeface-fira-mono/-/typeface-fira-mono-1.1.13.tgz"
+  "version" "1.1.13"
+
 "typeface-nunito@^1.1.13":
   "integrity" "sha512-S7tN6pMnJapUxRDNa/RPXtcsxJC0KkBNPFOfGpHCkatVLm+6ltMedgeGtr1lPZsGFXGN890TZmE18bq2pdsmKw=="
   "resolved" "https://registry.npmjs.org/typeface-nunito/-/typeface-nunito-1.1.13.tgz"
+  "version" "1.1.13"
+
+"typeface-space-mono@^1.1.13":
+  "integrity" "sha512-F5ogC58i6PqmG+Q35gXHIZsaP822Lyd+xNBGYhNDKsffxaloamA9ecDum7OZG0qfQtmsuPbT7fiFOtLR1dPoow=="
+  "resolved" "https://registry.npmjs.org/typeface-space-mono/-/typeface-space-mono-1.1.13.tgz"
   "version" "1.1.13"
 
 "typescript@>=2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
