@@ -9,9 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-const SEO = ({ description, lang, meta, image: metaImage, title, pathname }) => {
-  const { site } = useStaticQuery(
+const SEO = ({ description, lang, meta, title, pathname }) => {
+  const data = useStaticQuery(
     graphql`
       query {
         site {
@@ -24,13 +25,23 @@ const SEO = ({ description, lang, meta, image: metaImage, title, pathname }) => 
             keywords
           }
         }
+        metaImage: file(absolutePath: { regex: "/cover.png/" }) {
+          childImageSharp {
+            fixed(width: 1024, height: 512, quality: 95) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `
   )
 
+  const site = data?.site
+  const metaImage = data?.metaImage?.childImageSharp?.fixed
+
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const image =
+  const image = 
     metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null

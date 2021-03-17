@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Chubbies`,
+    title: `Chubbies: A Cute NFT Project`,
     author: {
       name: `Chubbies`,
-      summary: `Cutest NFT collectibles on the Ethereum blockchain`,
+      summary: `Cutest animated NFT collectibles on the Ethereum blockchain`,
     },
-    description: `Cutest NFT collectibles on the Ethereum blockchain`,
+    description: `Cutest animated NFT collectibles on the Ethereum blockchain`,
     siteUrl: `https://chubbies.io`,
-    keywords: ["cryptopunks", "nft", "crypto", "art", "ethereum", "collect", "bganpunks", "unofficial", "blockchain"],
+    keywords: ["cryptopunks", "nft", "crypto", "art", "ethereum", "collect", "gif", "pixel", "blockchain", "chubbies"],
   },
   plugins: [
     {
