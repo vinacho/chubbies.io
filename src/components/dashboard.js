@@ -277,46 +277,53 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div className="sticky-cta">
-        <div className="sticky-container">
-          <div className="sticky-gif-container">
-            <img src={upsellGIF} alt="Sample Chubby 1" />
-          </div>
-          <div className="sitcky-content-container">
-            <div><strong>Get a Chubby now!</strong></div>
-            <p>Wallet: {this.state.currentAccount || "Please connect to Metamask Wallet"}</p>
-            <p>{this.state.isMainnet ? "" : "Warning, this wallet is not on mainnet."}</p>
-            <p>Total Supply: {this.state.totalSupply}/10000</p>
-            <p>Owned Chubbies: 
-            {this.state.ownedChubbies.map( element => {
-              const link = OPENSEA_WEB + element;
-              return (<span><a href={link}>{element}</a> </span>)
-            })}
-            </p>
-            <p>{this.state.unitPrice <= 0 ? "" : "Price: "+ (this.state.unitPrice * parseInt(this.state.purchaseNumber)) + " ETH + gas"}</p>
-          </div>
-          
+        <div className="sticky-cta">
+          {this.state.hasSaleStarted ? (
+            <div>
+              <div className="sticky-container">
+                <div className="sticky-gif-container">
+                  <img src={upsellGIF} alt="Sample Chubby 1" />
+                </div>
+                <div className="sitcky-content-container">
+                  <div><strong>Get a Chubby now!</strong></div>
+                  <p>Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
+                  <p>{this.state.isMainnet ? "" : "Warning, this wallet is not on mainnet."}</p>
+                  <p>Total Supply: {this.state.totalSupply}/10000</p>
+                  <p>Owned Chubbies: 
+                  {this.state.ownedChubbies.map( element => {
+                    const link = OPENSEA_WEB + element;
+                    return (<span key={element}><a href={link}>{element}</a> </span>)
+                  })}
+                  </p>
+                  <p>{this.state.unitPrice <= 0 ? "" : "Price: "+ (this.state.unitPrice * parseInt(this.state.purchaseNumber)) + " ETH + gas"}</p>
+                </div>
+              </div>
+              <div className="sticky-button-container">
+                <span>Adopt <input 
+                  type="text"
+                  value={this.state.purchaseNumber} 
+                  onChange={event => this.setState({purchaseNumber: event.target.value.replace(/\D/,'')})}
+                  min="1"
+                  max="20"
+                  style={{width: "32px"}}/> Chubbies</span>
+                <button
+                    className="cta-button" 
+                    onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
+                    disabled={this.state.currentAccount == null || this.state.isSendingTransaction || !this.state.hasSaleStarted}
+                  >
+                  Request on Metamask
+                </button>
+              </div>
+            </div>
+          ) : 
+            <div className="sticky-container">
+              <div><strong>Sale has not started yet</strong></div>
+            </div>
+          }
           
         </div>
-        <div className="sticky-button-container">
-          <span>Adopt <input 
-            type="text"
-            value={this.state.purchaseNumber} 
-            onChange={event => this.setState({purchaseNumber: event.target.value.replace(/\D/,'')})}
-            min="1"
-            max="20"
-            style={{width: "32px"}}/> Chubbies</span>
-          <button
-              className="cta-button" 
-              onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
-              disabled={this.state.currentAccount == null || this.state.isSendingTransaction || !this.state.hasSaleStarted}
-            >
-            Request on Metamask
-          </button>
-        </div>
-      </div>
+      
     );
   }
 }

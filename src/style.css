@@ -391,7 +391,7 @@ a:focus {
 }
 
 .sticky-gif-container img {
-  width: 100%;
+  width: 60px;
   height:auto;
 }
 
@@ -409,6 +409,44 @@ a:focus {
   max-width: 320px;
   height:auto;
   padding: 12px;
+}
+
+/* Race Colors */
+
+.race {
+  font-weight: var(--fontWeight-bold);
+}
+
+.zombie {
+  color: darkolivegreen;
+}
+
+.ape {
+  color: maroon;
+}
+
+.alien {
+  color: turquoise;
+}
+
+.robot{
+  color: dimgray;
+}
+
+.cat {
+  color: midnightblue;
+}
+
+.monkey {
+  color: sienna;
+}
+
+.diamond-hands {
+  color: cyan;
+}
+
+.rainbow {
+  color: hotpink;
 }
 
 /* Media queries */

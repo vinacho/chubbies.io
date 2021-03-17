@@ -6,12 +6,45 @@
  */
 
 import React from "react"
+import Image from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 import sampleGIF1 from '../gifs/1.gif'
 import sampleGIF2 from '../gifs/2.gif'
 import sampleGIF3 from '../gifs/3.gif'
+import bannerGIF from '../gifs/launch-banner.gif'
 
 const Bio = ({releasedNumber}) => {
+
+  const data = useStaticQuery(graphql`
+    query BioQuery {
+      husband: file(absolutePath: { regex: "/69.png/" }) {
+        childImageSharp {
+          fixed(width: 100, height: 100, quality: 95) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      wife: file(absolutePath: { regex: "/115.png/" }) {
+        childImageSharp {
+          fixed(width: 100, height: 100, quality: 95) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          author {
+            name
+            summary
+          }
+        }
+      }
+    }
+  `)
+  const wifeAvatar = data?.wife?.childImageSharp?.fixed
+  const husbandAvatar = data?.husband?.childImageSharp?.fixed
+
   return (
     <div className="blog-post">
       <div>
@@ -19,8 +52,13 @@ const Bio = ({releasedNumber}) => {
         <p>
           Chubbies are the cutest generated NFTs on the Ethereum blockchain! They can be chubby, but they are cute AF too! 
         </p>
+
+        <div>
+          <img style={{width: "100%"}}src={bannerGIF} alt="Banner" />
+        </div>
+
         <p>
-          Paying respect to its predecessors (Cryptopunks), of course there will be <span style={{color: "darkolivegreen"}}>Zombies</span>, <span style={{color: "maroon"}}>Apes</span>, <span style={{color: "turquoise"}}>Aliens</span> but we didn't stop there. We have <span style={{color: "dimgray"}}>Robots</span>, <span style={{color: "midnightblue"}}>Cats</span> and <span style={{color: "sienna"}}>Monkey</span>! There's a variety of combinations of accessories and backgrounds that will appeal to everyone.  
+          Paying respect to its predecessors (Cryptopunks), of course there will be <span className="zombie race">Zombies</span>, <span className="ape race">Apes</span>, <span className="alien race">Aliens</span> but we didn't stop there. We have <span className="robot race">Robots</span>, <span className="cat race">Cats</span> and <span className="monkey race">Monkey</span>! There's a variety of combinations of animal customes, accessories like <span className="diamond-hands race">Diamond Hands</span> and backgrounds like <span className="rainbow race">Rainbow</span> that will spice up your Chubby and give it its unique look.  
         </p>
 
         <h3>Specs</h3>
@@ -36,24 +74,43 @@ const Bio = ({releasedNumber}) => {
 
         <h3>A Cute and Chubby Bonding Curve</h3>
         <p>
-          The purchase price increases with a bonding curve to <del>create FOMO</del>reward early supporters so that more people will buy these cute little things. To <del>punish our greediness</del>build a community and encourage trading, we purposefully designed the curve to be competitive as compared to other projects. 75% of them are priced under 0.2 ETH and the highest price is capped at 1 ETH. 
+          The purchase price increases with a bonding curve to <del>create hype and FOMO</del> reward early supporters so that more people will buy these cute little things. To <del>punish our greediness</del> build a community and encourage collecting and trading, we purposefully designed the curve to be competitive as compared to other projects. As a result, 75% of them are priced under 0.2 ETH and the highest price is capped at 1 ETH. 
         </p>
         <ul>
-          <li>0 - 499: 0.02 ETH</li>
-          <li>500 - 1499: 0.04 ETH</li>
-          <li>1500 - 3499: 0.08 ETH</li>
-          <li>3500 - 7499: 0.16 ETH</li>
-          <li>7500 - 9499: 0.32 ETH</li>
-          <li>9500 - 9899: 0.64 ETH</li>
-          <li>9900 - 9999: 1.00 ETH</li>
+          <li>#0 - #499: 0.02 ETH</li>
+          <li>#500 - #1499: 0.04 ETH</li>
+          <li>#1500 - #3499: 0.08 ETH</li>
+          <li>#3500 - #7499: 0.16 ETH</li>
+          <li>#7500 - #9499: 0.32 ETH</li>
+          <li>#9500 - #9899: 0.64 ETH</li>
+          <li>#9900 - #9999: 1.00 ETH</li>
         </ul>
 
         <h3>Why get a NFT? Why get a Chubby?</h3>
-        <p>Think of it as Trading Card Games for adults with some money to spare. NFT is at its peak currently and you should join the hype! Even though it's a little too hyped right now imo, the technology changes how people collect and trade art fundamentally and we strongly believe that it's here to stay. For example, everyone can peek into each others' collection a.k.a wallets. Trading art has never been so easy before. Art is like the new stocks. Who knows? A NFT you buy now might be worth millions in the future<del> (or zero).</del></p>
-        <p>As for why Chubbies, well maybe you want it because you're chubby. Or skinny. Or maybe you're an Ape, a Zombie, or an Alien. Or you want one for your Cat. This can't got wrong because art is in the eyes of the beholder and there's no failure in art. And most of all, like the Japanese says it, Cuteness is Justice! Get a Chubby while its still cheap cheap!</p>
+        <p>Think of NFT as Trading Card Games for adults with some money to spare. NFT is at its peak currently and you should join the hype! Even though it's a little too hyped right now imo, the technology changes how people collect and trade art fundamentally and we strongly believe that it's here to stay. For example, everyone can peek into each others' collection a.k.a wallets. Trading art has never been so easy before. Art is like the new stocks. Who knows? A NFT you buy now might be worth millions in the future<del> (or zero).</del></p>
+        <p>As for why Chubbies, there can be so many reasons! Well, maybe you want a chubby because you're chubby. Or skinny. Or maybe you're an <span className="ape race">Ape</span>, a <span className="robot race">Robots</span>, a <span className="zombie race">Zombie</span>, or an <span className="alien race">Alien</span> and want a NFT waifu. Or NFT husbando. Or you want one for your <span className="cat race">Cat</span>. </p>
+
+        <p>Chubbies are so cute that they can't go wrong. <strong>Because art is in the eyes of the beholder and there's no failure in art.</strong> And most of all, like the Japanese says it, Cuteness is Justice(<em>かわいいは正義</em>)! Get a Chubby while its still early and cheap cheap!</p>
         <p>
-          We can't wait to see what the community think of which one is the cutest! 
+          There are so many possible combinations and we can't wait to see what the community think of which one is the cutest! 
         </p>
+
+        <h3>About Us</h3>
+        {husbandAvatar && (
+          <div>
+            <Image
+              fixed={husbandAvatar}
+              alt={``}
+              className="bio-avatar"
+            />
+            <Image
+              fixed={wifeAvatar}
+              alt={``}
+              className="bio-avatar"
+            />
+          </div>
+        )}
+        <p>We are a husband-wife duo who believe in the future of crypto and NFTs. We make NFTs while we HODL onto BTC, ETH, and ADA. Both of us loave pixel art and we both design and code. Check out our other project - @bwpunks!</p>
       </div>
     </div>
   )
