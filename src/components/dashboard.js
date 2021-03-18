@@ -288,7 +288,7 @@ class Dashboard extends React.Component {
   render() {
     return (
         <div className="sticky-cta">
-          {false ? (
+          {this.state.hasSaleStarted ? (
             <div>
               <div className="sticky-container">
                 <div className="sticky-gif-container">
