@@ -8,7 +8,7 @@ module.exports = {
     description: `Cutest animated NFT collectibles on the Ethereum blockchain`,
     siteUrl: `https://chubbies.io`,
     keywords: ["cryptopunks", "nft", "crypto", "art", "ethereum", "collect", "gif", "pixel", "blockchain", "chubbies"],
-    defaultImage: "/static/cover.png"
+    defaultImage: "/cover.png"
   },
   plugins: [
     {

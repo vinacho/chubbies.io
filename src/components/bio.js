@@ -12,6 +12,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import sampleGIF1 from '../gifs/1.gif'
 import sampleGIF2 from '../gifs/2.gif'
 import sampleGIF3 from '../gifs/3.gif'
+import sampleGIF4 from '../gifs/4.gif'
+import sampleGIF5 from '../gifs/5.gif'
+import sampleGIF6 from '../gifs/6.gif'
+import sampleGIF7 from '../gifs/7.gif'
+import sampleGIF8 from '../gifs/8.gif'
+import sampleGIF9 from '../gifs/9.gif'
 import bannerGIF from '../gifs/launch-banner.gif'
 
 const Bio = ({releasedNumber}) => {
@@ -135,11 +141,16 @@ const Bio = ({releasedNumber}) => {
         <p>TBD. At this point, Chubbies are just tradable art like all the other NFTs. But we are working on more features for this site and might come up with creative ideas to make it more fun!</p>
         
 
-        <h3>Cute, Cute, Cute</h3>
+        <h3>Cute, Cute, Chubby, Cute</h3>
+
+        <p>Hmmm.. What kind of Chubby will you get?</p>
         <div className="sample-gallery">
-          <img src={sampleGIF1} alt="Sample Chubby 1" />
-          <img src={sampleGIF2} alt="Sample Chubby 2" />
-          <img src={sampleGIF3} alt="Sample Chubby 3" />
+          <img src={sampleGIF4} alt="Sample Chubby 4" />
+          <img src={sampleGIF5} alt="Sample Chubby 5" />
+          <img src={sampleGIF6} alt="Sample Chubby 6" />
+          <img src={sampleGIF7} alt="Sample Chubby 7" />
+          <img src={sampleGIF8} alt="Sample Chubby 8" />
+          <img src={sampleGIF9} alt="Sample Chubby 9" />
         </div>
       </div>
     </div>

@@ -3,8 +3,13 @@ import detectEthereumProvider from '@metamask/detect-provider';
 import upsellGIF from '../gifs/1.gif'
 const Web3 = require('web3');
 
-const OPENSEA_WEB = "https://testnets.opensea.io/assets/0xe979ee4f9f11b321eadf91853dc86beb05b8a029/";
-const NFT_CONTRACT_ADDRESS = "0xE979eE4F9f11b321eaDF91853DC86BeB05B8a029";
+// TEST
+// const OPENSEA_WEB = "https://testnets.opensea.io/assets/0xe979ee4f9f11b321eadf91853dc86beb05b8a029/";
+// const NFT_CONTRACT_ADDRESS = "0xE979eE4F9f11b321eaDF91853DC86BeB05B8a029"; //test
+
+// MAINNET
+const OPENSEA_WEB = "https://opensea.io/assets/0xe979ee4f9f11b321eadf91853dc86beb05b8a029/";
+const NFT_CONTRACT_ADDRESS = "0x1DB61FC42a843baD4D91A2D788789ea4055B8613";
 const NFT_ABI = [
   {
     "inputs": [
@@ -92,7 +97,8 @@ class Dashboard extends React.Component {
       hasSaleStarted: false,
       isMainnet: true,
       unitPrice: 0,
-      ownedChubbies: []
+      ownedChubbies: [],
+      statusString: null
     }
   }
 
@@ -121,7 +127,6 @@ class Dashboard extends React.Component {
       NFT_CONTRACT_ADDRESS,
       { gasLimit: "1000000" }
     );
-    console.log("ethereum provider detected");
 
     /**********************************************************/
     /* Handle chain (network) and chainChanged (per EIP-1193) */
@@ -198,8 +203,6 @@ class Dashboard extends React.Component {
   }
 
   adoptChubby = (contractAddress, contractABI, numPurchase) => {
-    console.log("ccc");
-    console.log('Start mint.js');
     const account = this.state.currentAccount;
 
     if (account === null) {
@@ -223,12 +226,17 @@ class Dashboard extends React.Component {
       this.web3.eth.sendTransaction(transactionOptions, (err, transactionId) => {
         if  (err) {
           console.log('Payment failed', err)
+          this.setState({
+            isSendingTransaction: false,
+            statusString: "Payment failed!"
+          });
         } else {
           console.log('Payment successful', transactionId)
+          this.setState({
+            isSendingTransaction: false,
+            statusString: "Payment successful! Please check Metamask for details and refresh when its done."
+          });
         }
-        this.setState({
-          isSendingTransaction: false
-        });
       });
     });
   }
@@ -243,7 +251,6 @@ class Dashboard extends React.Component {
   updateTotalSupply = () => {
     console.log("called totalSupply");
     this.nftContract.methods.totalSupply().call().then((totalSupply) => {
-      console.log("totalSupply: " + totalSupply);
       this.setState({
         totalSupply: totalSupply,
       });
@@ -287,26 +294,26 @@ class Dashboard extends React.Component {
                 </div>
                 <div className="sitcky-content-container">
                   <div><strong>Get a Chubby now!</strong></div>
-                  <p>Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
-                  <p>{this.state.isMainnet ? "" : "Warning, this wallet is not on mainnet."}</p>
+                  <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
                   <p>Total Supply: {this.state.totalSupply}/10000</p>
                   <p>Owned Chubbies: 
                   {this.state.ownedChubbies.map( element => {
                     const link = OPENSEA_WEB + element;
-                    return (<span key={element}><a href={link}>{element}</a> </span>)
+                    return (<span key={element}><a href={link} target="_blank">{element}</a> </span>)
                   })}
                   </p>
                   <p>{this.state.unitPrice <= 0 ? "" : "Price: "+ (this.state.unitPrice * parseInt(this.state.purchaseNumber)) + " ETH + gas"}</p>
+                  {this.state.statusString && <p>{this.state.statusString}</p>}
                 </div>
               </div>
               <div className="sticky-button-container">
                 <span>Adopt <input 
-                  type="text"
+                  type="number"
                   value={this.state.purchaseNumber} 
                   onChange={event => this.setState({purchaseNumber: event.target.value.replace(/\D/,'')})}
                   min="1"
                   max="20"
-                  style={{width: "32px"}}/> Chubbies</span>
+                  style={{width: "50px"}}/> Chubbies</span>
                 <button
                     className="cta-button" 
                     onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
@@ -318,7 +325,7 @@ class Dashboard extends React.Component {
             </div>
           ) : 
             <div className="sticky-container">
-              <div><strong>Sale has not started yet</strong></div>
+              <div><strong>Sale has not started yet. Follow <a href="https://twitter.com/chubbiesnft">Twitter</a> for latest info.</strong></div>
             </div>
           }
           

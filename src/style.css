@@ -263,7 +263,7 @@ a:focus {
 .main-heading {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   font-size: var(--fontSize-7);
   margin: 0;
 }
@@ -356,6 +356,12 @@ a:focus {
   font-size: var(--fontSize-0);
 }
 
+.sticky-content-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .sticky-content-container p {
   flex-shrink: 1;
 }
@@ -379,6 +385,7 @@ a:focus {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
