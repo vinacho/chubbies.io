@@ -288,7 +288,7 @@ class Dashboard extends React.Component {
   render() {
     return (
         <div className="sticky-cta">
-          {this.state.hasSaleStarted ? (
+          {false ? (
             <div>
               <div className="sticky-container">
                 <div className="sticky-gif-container">
@@ -327,7 +327,7 @@ class Dashboard extends React.Component {
             </div>
           ) : 
             <div className="sticky-container">
-              <div><strong>Sale has not started yet. Follow <a href="https://twitter.com/chubbiesnft">Twitter</a> for latest info.</strong></div>
+              <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead.</strong></div>
             </div>
           }
           

@@ -396,6 +396,7 @@ a:focus {
   max-width: 320px;
   height:auto;
   padding: 12px;
+  align-self: flex-start; 
 }
 
 /* Race Colors */
