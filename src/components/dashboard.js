@@ -8,7 +8,7 @@ const Web3 = require('web3');
 // const NFT_CONTRACT_ADDRESS = "0xE979eE4F9f11b321eaDF91853DC86BeB05B8a029"; //test
 
 // MAINNET
-const OPENSEA_WEB = "https://opensea.io/assets/0xe979ee4f9f11b321eadf91853dc86beb05b8a029/";
+const OPENSEA_WEB = "https://opensea.io/assets/0x1DB61FC42a843baD4D91A2D788789ea4055B8613/";
 const NFT_CONTRACT_ADDRESS = "0x1DB61FC42a843baD4D91A2D788789ea4055B8613";
 const NFT_ABI = [
   {
