@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 
 const SEO = ({ description, lang, meta, title, pathname }) => {
   const data = useStaticQuery(
@@ -23,13 +22,8 @@ const SEO = ({ description, lang, meta, title, pathname }) => {
               twitter
             }
             keywords
-          }
-        }
-        metaImage: file(absolutePath: { regex: "/cover.png/" }) {
-          childImageSharp {
-            fixed(width: 1024, height: 512, quality: 95) {
-              ...GatsbyImageSharpFixed
-            }
+            siteUrl
+            defaultImage
           }
         }
       }
@@ -37,14 +31,11 @@ const SEO = ({ description, lang, meta, title, pathname }) => {
   )
 
   const site = data?.site
-  const metaImage = data?.metaImage?.childImageSharp?.fixed
+  const imageSrc = site?.siteMetadata?.defaultImage
+  const metaImage = imageSrc ? `${site.siteMetadata.siteUrl}${imageSrc}` : null
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const image = 
-    metaImage && metaImage.src
-      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-      : null
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
@@ -102,15 +93,15 @@ const SEO = ({ description, lang, meta, title, pathname }) => {
             ? [
                 {
                   property: "og:image",
-                  content: image,
+                  content: metaImage,
                 },
                 {
                   property: "og:image:width",
-                  content: metaImage.width,
+                  content: 1024,
                 },
                 {
                   property: "og:image:height",
-                  content: metaImage.height,
+                  content: 512,
                 },
                 {
                   name: "twitter:card",
@@ -139,7 +130,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,

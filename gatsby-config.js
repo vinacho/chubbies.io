@@ -8,6 +8,7 @@ module.exports = {
     description: `Cutest animated NFT collectibles on the Ethereum blockchain`,
     siteUrl: `https://chubbies.io`,
     keywords: ["cryptopunks", "nft", "crypto", "art", "ethereum", "collect", "gif", "pixel", "blockchain", "chubbies"],
+    defaultImage: "/static/cover.png"
   },
   plugins: [
     {
@@ -87,16 +88,7 @@ module.exports = {
         icon: `content/assets/favicon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-plugin-use-dark-mode",
-      options: {
-         classNameDark: "dark-mode",
-         classNameLight: "light-mode",
-         storageKey: "darkMode",
-         minify: true,
-      },
-    }
+    `gatsby-plugin-react-helmet`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

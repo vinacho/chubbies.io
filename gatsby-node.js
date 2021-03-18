@@ -81,6 +81,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       author: Author
       siteUrl: String
       social: Social
+      defaultImage: String
     }
 
     type Author {
