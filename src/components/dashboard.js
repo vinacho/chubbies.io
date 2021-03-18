@@ -295,8 +295,8 @@ class Dashboard extends React.Component {
                 <div className="sitcky-content-container">
                   <div><strong>Join the Chubby Presale</strong></div>
                   <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
-                  <p>Total Supply: {this.state.totalSupply}/10000</p>
-                  <p>Owned Chubbies: 
+                  <p>Number of Chubbies Adopted: {this.state.totalSupply}/10000</p>
+                  <p>Your Chubbies: 
                   {this.state.ownedChubbies.map( element => {
                     const link = OPENSEA_WEB + element;
                     return (<span key={element}><a href={link} target="_blank">{element}</a> </span>)
