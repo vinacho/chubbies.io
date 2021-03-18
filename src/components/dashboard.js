@@ -128,6 +128,8 @@ class Dashboard extends React.Component {
       { gasLimit: "1000000" }
     );
 
+    this.connect()
+
     /**********************************************************/
     /* Handle chain (network) and chainChanged (per EIP-1193) */
     /**********************************************************/
