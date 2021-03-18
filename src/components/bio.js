@@ -69,7 +69,7 @@ const Bio = ({releasedNumber}) => {
 
         <h3>Specs</h3>
         <p>
-          Each Chubby is a programmatically generated 32x32 GIF enlarged to 320x320, stored as an ERC721 token on the Ethereum blockchain. Each one is unique, carefully crafted from than 6 properties, and animated with 5 different frames at 400ms per frame. There will be a limited supply of 10000, and the pricing follows a bonding curve detailed below.
+          Each Chubby is a programmatically generated 32x32 GIF enlarged to 320x320, stored as an ERC721 token on the Ethereum blockchain. Each one is unique, carefully crafted from than 6 properties, and animated with 5 different frames at 150ms per frame. There will be a limited supply of 10000, and the pricing follows a bonding curve detailed below.
         </p>
 
         <div className="sample-gallery">
@@ -83,7 +83,8 @@ const Bio = ({releasedNumber}) => {
           The purchase price increases with a bonding curve to <del>create hype and FOMO</del> reward early supporters so that more people will buy these cute little things. To build a community and encourage collecting and trading, we purposefully designed the curve to be competitive compared to other projects. By design, 75% of them are priced under 0.2 ETH, and the highest price is capped at 1 ETH.
         </p>
         <ul>
-          <li>#0 - #499: 0.02 ETH</li>
+          <li>#0 - #29: Reserved for Giveaways and people who helped along the way</li>
+          <li>#30 - #499: 0.02 ETH</li>
           <li>#500 - #1499: 0.04 ETH</li>
           <li>#1500 - #3499: 0.08 ETH</li>
           <li>#3500 - #7499: 0.16 ETH</li>
@@ -139,6 +140,9 @@ const Bio = ({releasedNumber}) => {
 
         <h4>Future Plans</h4> 
         <p>TBD. At this point, Chubbies are just tradable art like all the other NFTs. But we are working on more features for this site and might come up with creative ideas to make it more fun!</p>
+
+        <h4>My Chubbies are not revealed yet on OpenSea, what can I do?</h4> 
+        <p>Chubbies are unrevealed during Presale. After the Reveal (which will be announced on Twitter), you can click on "Update Metadata" to see the exact Chubby you got on. Any Chubby gotten after the presale will be revealed by default. </p>
         
 
         <h3>Cute, Cute, Chubby, Cute</h3>

@@ -293,7 +293,7 @@ class Dashboard extends React.Component {
                   <img src={upsellGIF} alt="Sample Chubby 1" />
                 </div>
                 <div className="sitcky-content-container">
-                  <div><strong>Get a Chubby now!</strong></div>
+                  <div><strong>Join the Chubby Presale</strong></div>
                   <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
                   <p>Total Supply: {this.state.totalSupply}/10000</p>
                   <p>Owned Chubbies: 
