@@ -294,7 +294,7 @@ class Dashboard extends React.Component {
                 <div className="sticky-gif-container">
                   <img src={upsellGIF} alt="Sample Chubby 1" />
                 </div>
-                <div className="sitcky-content-container">
+                <div className="sticky-content-container">
                   <div><strong>Join the Chubby Presale</strong></div>
                   <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
                   <p>Number of Chubbies Adopted: {this.state.totalSupply}/10000</p>
@@ -315,7 +315,7 @@ class Dashboard extends React.Component {
                   onChange={event => this.setState({purchaseNumber: event.target.value.replace(/\D/,'')})}
                   min="1"
                   max="20"
-                  style={{width: "50px"}}/> Chubbies</span>
+                  style={{width: "50px"}}/> Chubbies (20 MAX)</span>
                 <button
                     className="cta-button" 
                     onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
@@ -326,8 +326,14 @@ class Dashboard extends React.Component {
               </div>
             </div>
           ) : 
-            <div className="sticky-container">
-              <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead.</strong></div>
+            <div className="sticky-content-container">
+              <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead. If you're already on Desktop, please check your Metamask extension, or try <a href="https://twitter.com/ChubbiesNFT/status/1372643222497857536?s=20">connecting manually</a>. Or try this button: </strong></div>
+              <button
+                className="cta-button" 
+                onClick={() => this.connect()}
+              >
+                Connect Metamask
+              </button>
             </div>
           }
           
