@@ -69,7 +69,7 @@ const Bio = ({releasedNumber}) => {
 
         <h3>Specs</h3>
         <p>
-          Each Chubby is a programmatically generated 32x32 GIF enlarged to 320x320, stored as an ERC721 token on the Ethereum blockchain. Each one is unique, carefully crafted from than 6 properties, and animated with 5 different frames at 150ms per frame. There will be a limited supply of 10000, and the pricing follows a bonding curve detailed below.
+          Each Chubby is a programmatically generated 32x32 GIF enlarged to 320x320, stored as an ERC721 token on the Ethereum blockchain. Each one is unique, carefully crafted from more than 6 properties, and animated with 5 different frames at 150ms per frame. There will be a limited supply of 10000, and the pricing follows a bonding curve detailed below.
         </p>
 
         <div className="sample-gallery">
