@@ -295,7 +295,9 @@ class Dashboard extends React.Component {
                   <img src={upsellGIF} alt="Sample Chubby 1" />
                 </div>
                 <div className="sticky-content-container">
-                  <div><strong>Join the Chubby Presale</strong></div>
+
+                  {this.state.totalSupply === 10000 ? (<div><strong>The Sale has Ended. Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>)
+                  : (<div><strong>Join the Chubby Presale</strong></div>)}
                   <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
                   <p>Number of Chubbies Adopted: {this.state.totalSupply}/10000</p>
                   <p>Your Chubbies: 
@@ -319,7 +321,7 @@ class Dashboard extends React.Component {
                 <button
                     className="cta-button" 
                     onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
-                    disabled={this.state.currentAccount == null || this.state.isSendingTransaction || !this.state.hasSaleStarted}
+                    disabled={this.state.currentAccount == null || this.state.isSendingTransaction || !this.state.hasSaleStarted || this.state.totalSupply === 10000}
                   >
                   Request on Metamask
                 </button>
@@ -327,7 +329,9 @@ class Dashboard extends React.Component {
             </div>
           ) : 
             <div className="sticky-content-container">
-              <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead. If you're already on Desktop, please check your Metamask extension, or try <a href="https://twitter.com/ChubbiesNFT/status/1372643222497857536?s=20">connecting manually</a>. Or try this button: </strong></div>
+              {this.state.totalSupply === 10000 ? (<div><strong>The Sale has Ended. Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>)
+                  : <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead. If you're already on Desktop, please check your Metamask extension, or try <a href="https://twitter.com/ChubbiesNFT/status/1372643222497857536?s=20">connecting manually</a>. Or try this button: </strong></div>}
+              
               <button
                 className="cta-button" 
                 onClick={() => this.connect()}
