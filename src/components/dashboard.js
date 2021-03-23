@@ -295,43 +295,21 @@ class Dashboard extends React.Component {
                   <img src={upsellGIF} alt="Sample Chubby 1" />
                 </div>
                 <div className="sticky-content-container">
-
-                  {this.state.totalSupply === 10000 ? (<div><strong>The Sale has Ended. Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>)
-                  : (<div><strong>Join the Chubby Presale</strong></div>)}
+                  <div><strong>All 10000 Chubbies Adopted! Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>
+        
                   <p>Current Wallet: {this.state.currentAccount || "Please connect to a Metamask Wallet"}</p>
-                  <p>Number of Chubbies Adopted: {this.state.totalSupply}/10000</p>
                   <p>Your Chubbies: 
                   {this.state.ownedChubbies.map( element => {
                     const link = OPENSEA_WEB + element;
                     return (<span key={element}><a href={link} target="_blank">{element}</a> </span>)
                   })}
                   </p>
-                  <p>{this.state.unitPrice <= 0 ? "" : "Price: "+ (this.state.unitPrice * parseInt(this.state.purchaseNumber)) + " ETH + gas"}</p>
-                  {this.state.statusString && <p>{this.state.statusString}</p>}
                 </div>
-              </div>
-              <div className="sticky-button-container">
-                <span>Adopt <input 
-                  type="number"
-                  value={this.state.purchaseNumber} 
-                  onChange={event => this.setState({purchaseNumber: event.target.value.replace(/\D/,'')})}
-                  min="1"
-                  max="20"
-                  style={{width: "50px"}}/> Chubbies (20 MAX)</span>
-                <button
-                    className="cta-button" 
-                    onClick={() => this.adoptChubby(NFT_CONTRACT_ADDRESS, NFT_ABI, parseInt(this.state.purchaseNumber))}
-                    disabled={this.state.currentAccount == null || this.state.isSendingTransaction || !this.state.hasSaleStarted || this.state.totalSupply === 10000}
-                  >
-                  Request on Metamask
-                </button>
               </div>
             </div>
           ) : 
             <div className="sticky-content-container">
-              {this.state.totalSupply === 10000 ? (<div><strong>The Sale has Ended. Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>)
-                  : <div><strong>Presale has started but you're probably on Mobile. Please access using a Computer Browser instead. If you're already on Desktop, please check your Metamask extension, or try <a href="https://twitter.com/ChubbiesNFT/status/1372643222497857536?s=20">connecting manually</a>. Or try this button: </strong></div>}
-              
+              <div><strong>All 10000 Chubbies Adopted! Thanks for your support! You can still get Chubbies on <a href="https://opensea.io/collection/chubbies">OpenSea</a></strong></div>
               <button
                 className="cta-button" 
                 onClick={() => this.connect()}
@@ -342,7 +320,6 @@ class Dashboard extends React.Component {
           }
           
         </div>
-      
     );
   }
 }
