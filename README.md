@@ -1,5 +1,5 @@
 # chubbies.io
-This is the code for [chubbies.io](chubbies.io) that was used to sell all 10000 Chubbies NFT. 
+This is the code for [chubbies.io](chubbies.io) that was used to sell all 10000 Chubbies NFT in March. 
 All Chubbies were sold out but you can still find them selling on [OpenSea](https://opensea.io/collection/chubbies)
 It serves as an example for anyone who are interested to mint ERC721 tokens on their own website.
 
@@ -25,7 +25,8 @@ Here are some helpful tutorials that helped me:
 
 Or you can just use [OpenSea Collection Manager](https://opensea.io/blog/announcements/introducing-the-collection-manager/) to mint collections easily without any programming knowledge. The caveat is that it can only be done manually so it will be very troublesome to create a large collection (e.g. 10000) with it. 
 
-## I want to support or contribute
-The above code has served its purpose but is not very scalable. A more useful chubbies.io V2 is currently under development and will also be open sourced once the base code and design are ready. Stay tuned!
+## chubbies.io V2
+The above code has served its purpose but is not very scalable. For example, its not mobile friendly and doesn't serve key features like exploring all Chubbies. It doesn't have a backend etc. A stronger chubbies.io V2 is currently under development and will also be open sourced once the base code and design are ready. Stay tuned!
 
+## I want to support or contribute
 In the meantime, you can support by getting a Chubbie from [OpenSea](https://opensea.io/collection/chubbies) or just share love.
